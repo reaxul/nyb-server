@@ -27,7 +27,7 @@ export class OrderService {
   }
 
   static async getOrdersByUserId(userId: string) {
-    console.log(userId);
+    // console.log(userId);
     const orders = await ordersCollection.find({ userId }).toArray();
     return orders;
   }

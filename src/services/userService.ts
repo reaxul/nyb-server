@@ -35,9 +35,9 @@ export class UserService {
   }
 
   static async login(email: string, password: string) {
-    console.log(email, password);
+    // console.log(email, password);
     const user = await usersCollection.findOne({ email });
-    console.log(user);
+    // console.log(user);
     if (!user) {
       throw new Error("User not found");
     }
