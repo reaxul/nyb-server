@@ -14,7 +14,10 @@ const port = process.env.PORT || 3000;
 // Middleware
 app.use(
   cors({
-    origin: ["http://localhost:5173", "https://nyb-restaurant-three.vercel.app"],
+    origin: [
+      "http://localhost:5173",
+      "https://nyb-restaurant-three.vercel.app",
+    ],
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
     credentials: true,
   })
@@ -40,6 +43,7 @@ app.get("/users/:userId/orders", OrderController.getOrdersByUserId);
 // menus route
 app.post("/menu", MenuController.createMenuItem);
 app.get("/menu", MenuController.getAllMenuItems);
+app.get("/menu/:id", MenuController.getSingleMenu);
 app.delete("/menu/:id", MenuController.deleteMenuItem);
 app.patch("/menu/:id", MenuController.updateMenuStatus);
 

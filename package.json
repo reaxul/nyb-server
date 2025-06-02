@@ -3,14 +3,14 @@
   "module": "index.ts",
   "type": "commonjs",
   "main": "dist/index.js",
- 
   "scripts": {
-     "dev": "ts-node-dev --respawn src/index.ts",
+    "dev": "ts-node src/index.ts",
     "build": "tsc",
     "start": "node ./dist/index.js"
   },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "ts-node": "^10.9.2"
   },
   "peerDependencies": {
     "typescript": "^5"

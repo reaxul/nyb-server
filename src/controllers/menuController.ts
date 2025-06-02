@@ -38,6 +38,20 @@ export class MenuController {
     }
   }
 
+  static async getSingleMenu(req: Request, res: Response): Promise<void> {
+    try {
+      const { id } = req.params;
+      if (!id) {
+        res.status(400).json({ message: "Menu item ID is required" });
+        return;
+      }
+      const item = await MenuService.getSingleMenu(id);
+      res.status(200).json({ item });
+    } catch (error) {
+      res.status(500).json({ message: "Error fetching single Menu" });
+    }
+  }
+
   static async deleteMenuItem(req: Request, res: Response): Promise<void> {
     try {
       const { id } = req.params;

@@ -12,6 +12,11 @@ export class MenuService {
     return items;
   }
 
+  static async getSingleMenu(itemId: string) {
+    const item = await menuCollection.findOne({ _id: new ObjectId(itemId) });
+    return item;
+  }
+
   static async deleteMenuItem(itemId: string) {
     const id = new ObjectId(itemId);
     const result = await menuCollection.deleteOne({ _id: id });
