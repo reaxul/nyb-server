@@ -15,7 +15,7 @@ const port = process.env.PORT || 3000;
 app.use(
   cors({
     origin: [
-      "https://nyb-restarant20.vercel.app",
+      "https://nyb-restaurant-nu.vercel.app",
       "http://localhost:5173",
     ],
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
